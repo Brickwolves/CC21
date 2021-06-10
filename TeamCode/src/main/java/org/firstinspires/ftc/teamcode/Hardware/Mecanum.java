@@ -50,23 +50,10 @@ public class Mecanum implements Robot {
 
    public DcMotor fr, fl, br, bl;
 
-   public Odometry odom;
    public IMU imu;
    public Arm arm;
-   public Claw claw;
-   public Intake intake;
-   public Shooter shooter;
-   public Wings wings;
-
-   public PID rotationPID = new PID(TELEOP_P, TELEOP_I, TELEOP_D, 0, 8, false);
-   public PID goalPID = new PID(GOAL_P, GOAL_I, GOAL_D, 0, 10, false);
-   public PID powerShotPID = new PID(PS_P, PS_I, PS_D, 0, 10, false);
 
    public static ElapsedTime time = new ElapsedTime();
-
-   public enum Units {
-      TICKS, INCHES, FEET
-   }
 
    public Mecanum(){
       initRobot();
@@ -74,20 +61,12 @@ public class Mecanum implements Robot {
 
    public void initRobot() {
 
-      // Init Motors
-      fr = hardwareMap.get(DcMotor.class, "front_right_motor");
-      fl = hardwareMap.get(DcMotor.class, "front_left_motor");
-      br = hardwareMap.get(DcMotor.class, "back_right_motor");
-      bl = hardwareMap.get(DcMotor.class, "back_left_motor");
-      resetMotors();
+      /*
+            I N I T   M O T O R S
+       */
 
       imu      = new IMU("imu");
-      odom     = new Odometry(0, 0, imu.getAngle());
-      claw     = new Claw("eservo_2", "eservo_1");
       arm      = new Arm("eservo_0");
-      intake   = new Intake("intake", "cservo_2", "cservo_4");
-      shooter  = new Shooter("spinny_1", "spinny_2", "cservo_1", "cservo_0");
-      wings    = new Wings("cservo_3", "cservo_5");
 
       multTelemetry.addData("Status", "Initialized");
       multTelemetry.update();

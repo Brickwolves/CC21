@@ -26,42 +26,19 @@ import static org.firstinspires.ftc.teamcode.Hardware.Controls.ButtonControls.Bu
 import static org.firstinspires.ftc.teamcode.Hardware.Controls.ButtonControls.Input.CROSS;
 import static org.firstinspires.ftc.teamcode.Utilities.OpModeUtils.multTelemetry;
 
-@Disabled
-@Autonomous(name="Movement", group="Autonomous Linear Opmode")
-public class Movement extends LinearOpMode
+@Autonomous(name="LinearAuto", group="Autonomous Linear Opmode")
+public class LinearAuto extends LinearOpMode
 {
-    private SanicPipe ringFinder = new SanicPipe();
+    // Declare OpMode members.
+    private ElapsedTime runtime = new ElapsedTime();
     private Mecanum robot;
-    private ButtonControls BC;
 
     public void initialize(){
         OpModeUtils.setOpMode(this);
         robot = new Mecanum();
-        robot.imu.setOffsetAngle(0);
-        BC = new ButtonControls(gamepad1);
 
-        initVision();
-    }
-
-    public void initVision(){
-        int cameraMonitorViewId = hardwareMap.appContext.getResources().getIdentifier("cameraMonitorViewId", "id", hardwareMap.appContext.getPackageName());
-        VisionUtils.webcam_front = OpenCvCameraFactory.getInstance().createWebcam(hardwareMap.get(WebcamName.class, "webcam2"), cameraMonitorViewId);
-        VisionUtils.webcam_front.setPipeline(ringFinder);
-        VisionUtils.webcam_front.openCameraDeviceAsync(() -> VisionUtils.webcam_front.startStreaming((int) VisionUtils.IMG_WIDTH, (int) VisionUtils.IMG_HEIGHT, OpenCvCameraRotation.UPRIGHT));
-    }
-
-    public void BREAKPOINT(){
-        ButtonControls.update();
-        Orientation curO = robot.odom.getOrientation();
-        while (!BC.get(CROSS, DOWN)){
-
-            ButtonControls.update();
-
-            multTelemetry.addData("X", curO.x);
-            multTelemetry.addData("Y", curO.y);
-            multTelemetry.addData("A", curO.a);
-            multTelemetry.update();
-        }
+        multTelemetry.addData("Status", "Initalized");
+        multTelemetry.update();
     }
 
     @RequiresApi(api = Build.VERSION_CODES.N)
@@ -76,17 +53,11 @@ public class Movement extends LinearOpMode
         waitForStart();
 
 
-        Orientation HOME = new Orientation(0,0, 180);
-
         if (opModeIsActive()){
 
-            BREAKPOINT();
-
-            robot.strafePowerRamp2(STRAFE_ANGLE, D_TICKS, ACCELERATION, FACE_ANGLE, 0, null);
-            robot.intake.rollerMid();
-            //robot.linearStrafe(new Orientation(X_TICKS, Y_TICKS, ANGLE), ACCELERATION, null);
-
-            BREAKPOINT();
+            /*
+                    Y O U R   C O D E   H E R E
+                                                   */
 
         }
    }
