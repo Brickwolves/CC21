@@ -7,7 +7,7 @@ import org.firstinspires.ftc.teamcode.Hardware.Controller;
 
 
 @TeleOp(name="Switch Demo 2", group="Iterative Opmode")
-public class Demo3SwitchConditions extends OpMode {
+public class Demo3SwitchConditionals extends OpMode {
 	
 	int demoInt = 0;
 	
