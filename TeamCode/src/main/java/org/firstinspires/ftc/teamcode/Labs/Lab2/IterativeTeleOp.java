@@ -1,27 +1,40 @@
-package org.firstinspires.ftc.teamcode.TeleOp;
+package org.firstinspires.ftc.teamcode.Labs.Lab2;
 
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
-import static com.qualcomm.robotcore.hardware.DcMotor.ZeroPowerBehavior.FLOAT;
-import static com.qualcomm.robotcore.hardware.DcMotorSimple.Direction.FORWARD;
 import static org.firstinspires.ftc.teamcode.Utilities.OpModeUtils.multTelemetry;
 import static org.firstinspires.ftc.teamcode.Utilities.OpModeUtils.setOpMode;
 
 
-@TeleOp(name="Iterative TeleOp", group="Iterative Opmode")
+@TeleOp(name="LAB 2: TeleOp", group="Iterative Opmode")
 public class IterativeTeleOp extends OpMode {
 
-    // Declare OpMode members.
     private ElapsedTime runtime = new ElapsedTime();
+
+
+
+    /*
+            D E C L A R E    R O B O T    H E R E
+     */
+
+
+
     /*
      * Code to run ONCE when the driver hits INIT
      */
     @Override
     public void init() {
         setOpMode(this);
+
+
+
+        /*
+                I N I T I A L I Z E    R O B O T    H E R E
+         */
+
 
         multTelemetry.addData("Status", "Initialized");
         multTelemetry.update();
@@ -34,9 +47,8 @@ public class IterativeTeleOp extends OpMode {
     public void init_loop() {
 
         /*
-                    Y O U R   C O D E   H E R E
-                                                   */
-
+                Y O U R   C O D E   H E R E
+         */
 
         multTelemetry.addData("Status", "InitLoop");
         multTelemetry.update();
@@ -67,7 +79,6 @@ public class IterativeTeleOp extends OpMode {
         /*
                     Y O U R   C O D E   H E R E
                                                    */
-
 
 
 

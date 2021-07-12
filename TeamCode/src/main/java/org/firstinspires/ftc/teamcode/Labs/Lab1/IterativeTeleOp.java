@@ -1,21 +1,20 @@
-package org.firstinspires.ftc.teamcode.TeleOp;
+package org.firstinspires.ftc.teamcode.Labs.Lab1;
 
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
-import static com.qualcomm.robotcore.hardware.DcMotor.ZeroPowerBehavior.FLOAT;
-import static com.qualcomm.robotcore.hardware.DcMotorSimple.Direction.FORWARD;
 import static org.firstinspires.ftc.teamcode.Utilities.OpModeUtils.multTelemetry;
 import static org.firstinspires.ftc.teamcode.Utilities.OpModeUtils.setOpMode;
 
 
-@TeleOp(name="Iterative TeleOp", group="Iterative Opmode")
+@TeleOp(name="LAB 1: TeleOp", group="Iterative Opmode")
 public class IterativeTeleOp extends OpMode {
 
     // Declare OpMode members.
     private ElapsedTime runtime = new ElapsedTime();
+    private DcMotor demoMotor;
     /*
      * Code to run ONCE when the driver hits INIT
      */
@@ -69,6 +68,8 @@ public class IterativeTeleOp extends OpMode {
                                                    */
 
 
+
+        demoMotor.setPower(1);
 
 
 

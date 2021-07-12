@@ -1,16 +1,17 @@
-package org.firstinspires.ftc.teamcode.Hardware.Controls;
+package org.firstinspires.ftc.teamcode.Z.Controls;
 
 import com.qualcomm.robotcore.hardware.Gamepad;
 
-import org.firstinspires.ftc.teamcode.Navigation.Point;
-
-import static org.firstinspires.ftc.teamcode.Hardware.Controls.JoystickControls.Input.*;
+import org.opencv.core.Point;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+
+import static org.firstinspires.ftc.teamcode.Z.Controls.JoystickControls.Input.LEFT;
+import static org.firstinspires.ftc.teamcode.Z.Controls.JoystickControls.Input.RIGHT;
 
 
 public class JoystickControls {

@@ -4,23 +4,39 @@ import android.os.Build;
 
 import androidx.annotation.RequiresApi;
 
-import org.firstinspires.ftc.teamcode.Navigation.Point;
+import org.opencv.core.Point;
 
 import static java.lang.Math.floorMod;
 import static java.lang.Math.sqrt;
 import static java.lang.Math.toDegrees;
+import static java.lang.Math.toRadians;
 import static java.lang.StrictMath.abs;
-import static java.lang.StrictMath.cos;
-import static java.lang.StrictMath.pow;
-import static java.lang.StrictMath.sin;
-import static java.lang.StrictMath.toRadians;
 import static org.firstinspires.ftc.teamcode.Utilities.MathUtils.angleMode.RADIANS;
 
 public class MathUtils {
 
-    public enum angleMode {
-        RADIANS, DEGREES
+
+
+    /**
+     * @param targetAngle
+     * @param currentAngle
+     * @return the closest relative target angle
+     */
+    @RequiresApi(api = Build.VERSION_CODES.N)
+    public static double closestAngle(double targetAngle, double currentAngle) {
+        return 0;
     }
+
+
+    public static double shift(Point p, double shiftAngle){
+        return 0;
+    }
+
+
+
+
+
+
 
     /**
      * @param x
@@ -36,59 +52,21 @@ public class MathUtils {
 
     /*
                         T R I G    E Q U A T I O N S
+
                                                                         */
 
+    public enum angleMode {
+        RADIANS, DEGREES
+    }
+
     public static double cos(double value, angleMode mode){
-        return (mode == RADIANS) ? Math.cos(value) : toDegrees(Math.cos(value));
+        return (mode == RADIANS) ? Math.cos(value) : Math.cos(toRadians(value));
     }
     public static double sin(double value, angleMode mode){
-        return (mode == RADIANS) ? Math.sin(value) : toDegrees(Math.sin(value));
+        return (mode == RADIANS) ? Math.sin(value) : Math.sin(toRadians(value));
     }
     public static double tan(double value, angleMode mode){
-        return (mode == RADIANS) ? Math.tan(value) : toDegrees(Math.tan(value));
-    }
-
-
-
-    /**
-     * @param x
-     * @param y
-     * @param shiftAngle
-     * @return (x, y) coordinate is mapped relative to robot's current heading
-     */
-    public static Point shift(double x, double y, double shiftAngle){
-        double r = toRadians(shiftAngle);
-        double shiftedX = (x * Math.sin(r)) + (y * Math.cos(r));
-        double shiftedY = (x * Math.cos(r)) - (y * Math.sin(r));
-        return new Point(shiftedX, shiftedY);
-    }
-
-    /**
-     * @param x
-     * @param y
-     * @param shiftAngle
-     * @return (x, y) relative robot coordinate mapped to field
-     */
-    public static Point unShift(double x, double y, double shiftAngle){
-        double r = toRadians(shiftAngle);
-        double unShiftedY = ((x * Math.cos(r)) - (y * Math.sin(r)))   /  (pow(Math.cos(r), 2) + pow(Math.sin(r), 2));
-        double unShiftedX = (x - (unShiftedY * Math.cos(r))) / Math.sin(r);
-        if (Math.sin(r) == 0) unShiftedX = 0;
-        return new Point(unShiftedX, unShiftedY);
-    }
-
-
-
-    /**
-     * @param targetAngle
-     * @param currentAngle
-     * @return the closest relative target angle
-     */
-    @RequiresApi(api = Build.VERSION_CODES.N)
-    public static double closestAngle(double targetAngle, double currentAngle) {
-        double simpleTargetDelta = floorMod(Math.round(((360 - targetAngle) + currentAngle) * 1e6), Math.round(360.000 * 1e6)) / 1e6;
-        double alternateTargetDelta = -1 * (360 - simpleTargetDelta);
-        return abs(simpleTargetDelta) <= abs(alternateTargetDelta) ? currentAngle - simpleTargetDelta : currentAngle - alternateTargetDelta;
+        return (mode == RADIANS) ? Math.tan(value) : Math.tan(toRadians(value));
     }
 
 

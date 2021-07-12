@@ -1,5 +1,6 @@
 package org.firstinspires.ftc.teamcode.Autonomous;
 
+import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
@@ -10,6 +11,7 @@ import com.qualcomm.robotcore.util.Range;
 import org.firstinspires.ftc.teamcode.Hardware.Mecanum;
 
 import static org.firstinspires.ftc.teamcode.Utilities.OpModeUtils.multTelemetry;
+import static org.firstinspires.ftc.teamcode.Utilities.OpModeUtils.setOpMode;
 
 
 @Autonomous(name="IterativeAuto", group="Iterative Opmode")
@@ -19,13 +21,13 @@ public class IterativeAuto extends OpMode {
     private ElapsedTime runtime = new ElapsedTime();
     private Mecanum robot;
 
-
     /*
      * Code to run ONCE when the driver hits INIT
      */
     @Override
     public void init() {
-        robot = new Mecanum();
+        setOpMode(this);
+
 
         multTelemetry.addData("Status", "Initialized");
         multTelemetry.update();

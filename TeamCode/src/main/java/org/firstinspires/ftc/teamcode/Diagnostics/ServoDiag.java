@@ -5,15 +5,12 @@ import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.Servo;
 
-import org.firstinspires.ftc.teamcode.Hardware.Controls.ButtonControls;
-import org.firstinspires.ftc.teamcode.Hardware.Controls.ControllerCollin;
+import org.firstinspires.ftc.teamcode.Z.Controls.ButtonControls;
 import org.firstinspires.ftc.teamcode.Utilities.OpModeUtils;
 
 import static org.firstinspires.ftc.teamcode.DashConstants.Dash_ServoDiagnostic.*;
-import static org.firstinspires.ftc.teamcode.Hardware.Controls.ButtonControls.ButtonState.DOWN;
-import static org.firstinspires.ftc.teamcode.Hardware.Controls.ButtonControls.Input.DPAD_DN;
-import static org.firstinspires.ftc.teamcode.Hardware.Controls.ButtonControls.Input.DPAD_UP;
-import static org.firstinspires.ftc.teamcode.Hardware.Controls.ButtonControls.Input.TOUCHPAD;
+import static org.firstinspires.ftc.teamcode.Z.Controls.ButtonControls.ButtonState.DOWN;
+import static org.firstinspires.ftc.teamcode.Z.Controls.ButtonControls.Input.TOUCHPAD;
 
 @Disabled
 @TeleOp(name = "ServoDiag TeleOp", group="Linear TeleOp")

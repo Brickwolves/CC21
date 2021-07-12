@@ -1,4 +1,4 @@
-package org.firstinspires.ftc.teamcode.Autonomous;
+package org.firstinspires.ftc.teamcode.Labs.Lab3;
 
 import android.os.Build;
 
@@ -9,7 +9,6 @@ import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
 import org.firstinspires.ftc.teamcode.Hardware.Mecanum;
-import org.firstinspires.ftc.teamcode.Utilities.OpModeUtils;
 
 import static org.firstinspires.ftc.teamcode.Utilities.OpModeUtils.multTelemetry;
 import static org.firstinspires.ftc.teamcode.Utilities.OpModeUtils.setOpMode;
@@ -17,13 +16,25 @@ import static org.firstinspires.ftc.teamcode.Utilities.OpModeUtils.setOpMode;
 @Autonomous(name="LinearAuto", group="Autonomous Linear Opmode")
 public class LinearAuto extends LinearOpMode
 {
-    // Declare OpMode members.
     private ElapsedTime runtime = new ElapsedTime();
+    private Mecanum robot;
 
     public void initialize(){
         setOpMode(this);
 
+        robot = new Mecanum();
+
         multTelemetry.addData("Status", "Initalized");
+        multTelemetry.update();
+    }
+
+    public void BREAKPOINT(){
+
+        while (true){
+            break;
+        }
+
+        multTelemetry.addData("Status", "BREAK");
         multTelemetry.update();
     }
 
