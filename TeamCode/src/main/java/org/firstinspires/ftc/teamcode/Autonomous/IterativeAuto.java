@@ -13,7 +13,7 @@ import org.firstinspires.ftc.teamcode.Hardware.Mecanum;
 import static org.firstinspires.ftc.teamcode.Utilities.OpModeUtils.multTelemetry;
 import static org.firstinspires.ftc.teamcode.Utilities.OpModeUtils.setOpMode;
 
-
+@Disabled
 @Autonomous(name="IterativeAuto", group="Iterative Opmode")
 public class IterativeAuto extends OpMode {
 

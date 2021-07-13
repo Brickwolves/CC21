@@ -1,5 +1,6 @@
 package org.firstinspires.ftc.teamcode.Labs.Lab2;
 
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
@@ -8,7 +9,7 @@ import com.qualcomm.robotcore.util.ElapsedTime;
 import static org.firstinspires.ftc.teamcode.Utilities.OpModeUtils.multTelemetry;
 import static org.firstinspires.ftc.teamcode.Utilities.OpModeUtils.setOpMode;
 
-
+@Disabled
 @TeleOp(name="LAB 2: TeleOp", group="Iterative Opmode")
 public class IterativeTeleOp extends OpMode {
 

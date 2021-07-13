@@ -5,6 +5,7 @@ import android.os.Build;
 import androidx.annotation.RequiresApi;
 
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
@@ -13,7 +14,8 @@ import org.firstinspires.ftc.teamcode.Hardware.Mecanum;
 import static org.firstinspires.ftc.teamcode.Utilities.OpModeUtils.multTelemetry;
 import static org.firstinspires.ftc.teamcode.Utilities.OpModeUtils.setOpMode;
 
-@Autonomous(name="LinearAuto", group="Autonomous Linear Opmode")
+@Disabled
+@Autonomous(name="LAB 3: Auto", group="Autonomous Linear Opmode")
 public class LinearAuto extends LinearOpMode
 {
     private ElapsedTime runtime = new ElapsedTime();
