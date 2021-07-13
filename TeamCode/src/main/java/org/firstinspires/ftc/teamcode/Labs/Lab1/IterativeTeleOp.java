@@ -5,6 +5,8 @@ import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
+import static com.qualcomm.robotcore.hardware.DcMotor.ZeroPowerBehavior.FLOAT;
+import static com.qualcomm.robotcore.hardware.DcMotorSimple.Direction.FORWARD;
 import static org.firstinspires.ftc.teamcode.Utilities.OpModeUtils.multTelemetry;
 import static org.firstinspires.ftc.teamcode.Utilities.OpModeUtils.setOpMode;
 
@@ -21,6 +23,15 @@ public class IterativeTeleOp extends OpMode {
     @Override
     public void init() {
         setOpMode(this);
+
+
+
+        demoMotor = hardwareMap.get(DcMotor.class, "demomotor");
+        demoMotor.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+        demoMotor.setDirection(FORWARD);
+        demoMotor.setZeroPowerBehavior(FLOAT);
+
+
 
         multTelemetry.addData("Status", "Initialized");
         multTelemetry.update();
